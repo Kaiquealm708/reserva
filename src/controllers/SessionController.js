@@ -1,7 +1,7 @@
 import User from "../models/user";
 import * as Yup from 'yup'
 
-class SessionControler{
+class SessionController{
   async store(req, res){
     const schema = Yup.object().shape({
         email: Yup.string().email().required(),
@@ -17,3 +17,5 @@ class SessionControler{
     return res.json(user)
   }
 }
+
+export default new SessionController();
